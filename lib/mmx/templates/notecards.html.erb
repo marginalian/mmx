@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='author' content='Jack Plane'>
+  <meta name='description' content="<%= description %>"/>
+  <meta name='keywords' content="<%= keywords %>"/>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='stylesheet' type='text/css' href=<%= stylesheet_path %>>
+  <title><%= brand %></title>
+</head>
+<body>
+  <div class='container'>
+
+    <header>
+      <div class='left'>
+        <div class='brand'>
+          <a href="<%= core_path %>"><%= brand %></a>
+        </div>
+      </div>
+
+      <div class='center'></div>
+
+      <div class='right'>
+        view:&nbsp;
+        <a href="<%= index_path %>"> wiki </a>
+        &nbsp;|&nbsp;
+        <a href="<%= pages_path %>"> list </a>
+      </div>
+    </header>
+
+    <div class="nab-stats" >
+      <em>
+        <%= nab_count %> notecards gathered between <%= first_nab_at %> and <%= last_nab_at %>
+      </em>
+    </div>
+
+    <hr />
+
+    <%= @body %>
+
+  </div>
+</body>

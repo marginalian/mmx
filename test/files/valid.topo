@@ -1,0 +1,36 @@
+-  Title Text
+
+.  Summary of the main text
+_
+
+.  Intro to the rest of the topic.
+.  2nd paragraph.
+
+=  Heading 1
+.  Longwinded passage about the
+   first heading, split accross
+   multiple lines.
+
+.  A list:
++  item 1
++  item 2
++  item 3
+
+.  __some bold text__
+
+.  A code block:
+#  line 1
+#  line 2
+
+/  commment lines
+/  here
+
+.  A long blockquote line:
+|  here it is
+   broken across lines
+
+.  Here is a block quote:
+|  block text
+|  more block text
+|
+|  block text after a spacer

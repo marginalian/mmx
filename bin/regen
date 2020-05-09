@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+filewatcher 'wiki/**/*' './mmx/bin/build.rb'

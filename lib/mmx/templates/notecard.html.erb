@@ -1,0 +1,32 @@
+<div id="<%= @id %>" class='nab'>
+  <div class='id'>
+    <%= @id %>
+  </div>
+
+  <div class='title'>
+    <%= @title %>
+  </div>
+
+  <div class='source'>
+    <em><%= @source %> - <%= @author %></em>
+  </div>
+
+  <div class='quote'>
+    <%= @quote %>
+  </div>
+
+  <% if @note %>
+    <div class='note'>
+      <%= @note %>
+    </div>
+  <% end %>
+
+  <% if mapped_refs.keys.length > 0 %>
+    <p>See also:</p>
+    <ul>
+      <% mapped_refs.each do |ref, title| %>
+        <li><a href="#<%= ref %>"><%= title %></a></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
