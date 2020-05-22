@@ -15,8 +15,9 @@ module Mmx
 
       link: -> (text, path, nabs:) do
         target = path =~ /^https?:/ ? "_blank" : ""
+        href = path.gsub("leaf", "html").gsub("_", "&lowbar;")
 
-        "<a target='#{target}' href='#{path.gsub("leaf", "html")}'>#{text}</a>"
+        "<a target='#{target}' href='#{href}'>#{text}</a>"
       end,
 
       long: -> (text, nabs:) do
@@ -24,14 +25,26 @@ module Mmx
       end,
 
       nab: -> (id, nabs:) do
-        nabs.lookup(id).quote.split("\n\n").map { "<blockquote>#{_1}</blockquote>" }.join
+        nab_html = nabs.lookup(id).quote.split("\n\n").map { "<div class=\"single-blockquote\">#{_1}</div>" }.join
+
+        <<~HTML
+          <div class="attributed-quote">
+            #{nab_html}
+          </div>
+        HTML
       end,
 
       'nab-plus': -> (id, nabs:) do
         nab = nabs.lookup(id)
-        block = nab.quote.split("\n\n").map { "<blockquote>#{_1}</blockquote>" }.join
-        attribution = "<div class='nab-source'>#{nab.source} - #{nab.author}</div>"
+        block = nab.quote.split("\n\n").map { "<div class=\"single-blockquote\">#{_1}</div>" }.join
+        attribution = "<div class='nab-source'>&mdash;&nbsp;#{nab.source} - #{nab.author}</div>"
         block + attribution
+
+        <<~HTML
+          <div class="attributed-quote">
+            #{block + attribution}
+          </div>
+        HTML
       end,
 
       'nab-pull': -> (id, nabs:) do
