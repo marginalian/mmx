@@ -9,6 +9,22 @@ module Mmx
         text.gsub(Regexp.new(pattern)) { "<span class='highlight'>#{_1}</span>" }
       end,
 
+      img: -> (path, nabs:) do
+        <<~HTML
+          <div class="img-container">
+            <img src=\"#{path}\">
+          </div>
+        HTML
+      end,
+
+      "img-size": -> (path, width, height, nabs:) do
+        <<~HTML
+          <div class="img-container dark">
+            <img width="#{width}" height="#{height}" src="#{path}">
+          </div>
+        HTML
+      end,
+
       indent: -> (text, nabs:) do
         "<div class='indent'>#{text}</div>"
       end,
@@ -49,12 +65,26 @@ module Mmx
 
       'nab-pull': -> (id, nabs:) do
         nab = nabs.lookup(id)
-        attribution = "<div class='nab-source'>#{nab.source} - #{nab.author}</div>"
-        "<blockquote class='pull-quote'>#{nab.quote}</blockquote>#{attribution}"
+        attribution = "<div class='nab-source'>&mdash;#{nab.source} - #{nab.author}</div>"
+        "<div class='pull'><div class='pull-quote'>#{nab.quote}</div><br>#{attribution}</div>"
       end,
 
+      'nab-combine': -> (*nab_ids, nabs:) do
+        nab_html = nab_ids
+          .map { |id| nabs.lookup(id).quote.split("\n\n").join("<br><br>") }
+          .join("<br><br>[...]<br><br>")
+
+        <<~HTML
+          <div class="attributed-quote">
+            <div class="single-blockquote">
+              #{nab_html}
+            </div>
+          </div>
+        HTML
+    end,
+
       'pull-quote': -> (text, nabs:) do
-        "<blockquote class='pull-quote'>#{text}</blockquote>"
+        "<div class='pull'><div class='pull-quote'>#{text}</div></div>"
       end,
     }
   end

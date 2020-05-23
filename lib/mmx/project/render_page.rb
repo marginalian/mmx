@@ -66,6 +66,15 @@ module Mmx
         end
       end
 
+      def root_path
+        case type
+        when :index
+          "../../"
+        when :page
+          "../../../"
+        end
+      end
+
       private
 
       attr_reader :type, :output_format

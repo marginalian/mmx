@@ -13,18 +13,26 @@
   <div class='container'>
 
     <header>
-      <div class='left'>
-        <div class='brand'>
-          <a href="<%= core_path %>"><%= brand %></a>
+      <div class='top'>
+        <div class='left'>
+          <img width="100" height="100" src="<%= "../../images/flying_book_left.png" %>">
+        </div>
+
+        <div class='center'>
+          <div class='brand'>
+            <a href="<%= core_path %>"><%= brand %></a>
+          </div>
+        </div>
+
+        <div class='right'>
+          <img width="100" height="100" src="<%= "../../images/flying_book_right.png" %>">
         </div>
       </div>
-
-      <div class='center'></div>
-
-      <div class='right'>
-        view:&nbsp;
+ 
+      <div class='bottom'>
+        view chapter as&nbsp;
         <a href="<%= index_path %>"> wiki </a>
-        &nbsp;|&nbsp;
+        &nbsp;or&nbsp;
         <a href="<%= pages_path %>"> list </a>
       </div>
     </header>
