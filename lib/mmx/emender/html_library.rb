@@ -81,11 +81,23 @@ module Mmx
             </div>
           </div>
         HTML
-    end,
+      end,
 
       'pull-quote': -> (text, nabs:) do
         "<div class='pull'><div class='pull-quote'>#{text}</div></div>"
       end,
+
+      webring: -> (nabs:) do
+        <<~HTML
+          <div class="webring">
+            <a href='https://webring.xxiivv.com/#random' target='_blank'>
+              <img src='https://webring.xxiivv.com/icon.black.svg'/>
+            </a>
+            <br>
+            <strong>WEBRING</strong>
+          </div>
+        HTML
+      end
     }
   end
 end
