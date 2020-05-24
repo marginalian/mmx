@@ -30,8 +30,13 @@ module Mmx
       end,
 
       link: -> (text, path, nabs:) do
-        target = path =~ /^https?:/ ? "_blank" : ""
-        href = path.gsub("leaf", "html").gsub("nab", "html").gsub("_", "&lowbar;")
+        out = path =~ /^https?:/
+        target = out ? "_blank" : ""
+        href = path.gsub("_", "&lowbar;")
+
+        if !out
+          href = href.gsub("leaf", "html").gsub("nab", "html")
+        end
 
         "<a target='#{target}' href='#{href}'>#{text}</a>"
       end,
