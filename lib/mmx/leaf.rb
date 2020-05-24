@@ -26,6 +26,7 @@ module Mmx
     def file_summary_lines
       file_content
         .gsub(/[a-zA-Z.]\n[a-zA-Z]/) { _1.gsub("\n", "\s") }
+        .gsub(/^-$/, "--")
         .split("\n")
         .reject(&:empty?)
         .first(3)
