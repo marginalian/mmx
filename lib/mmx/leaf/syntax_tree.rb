@@ -1,5 +1,3 @@
-require_relative "../composable"
-
 module Mmx
   class Leaf
     class SyntaxTree
@@ -107,3 +105,4 @@ module Mmx
     end
   end
 end
+

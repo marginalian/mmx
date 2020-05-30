@@ -1,0 +1,38 @@
+.notecard {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 1em 1em;
+  margin-bottom: 1em;
+}
+
+.notecard .id {
+  font-style: oblique;
+  color: #535353;
+  font-size: 0.8em;
+  float: right;
+}
+
+.notecard .title {
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+  font-size: 1.15em;
+  font-weight: 700;
+}
+
+.notecard .quote {
+  margin-bottom: 0.5em;
+  text-align: justify;
+  white-space: pre-wrap;
+}
+
+.notecard .note {
+  background-color: #FFF9C4;
+  border: 1px solid #FFEB3B;
+  padding: 0.5em;
+  margin: 1em 0;
+}
+
+.notecard-stats {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+

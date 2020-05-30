@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <%= render_partial :head %>
+</head>
+<body>
+  <main>
+    <%= render_partial :header %>
+
+    <div class="notecard-stats" >
+      <em>
+        <%= page.notecard_count %> notecards gathered between <%= page.first_at %> and <%= page.last_at %> 
+      </em>
+    </div>
+
+    <hr />
+
+    <article class="notecards">
+      <%= page.to_html %>
+    </article>
+  </main>
+</body>

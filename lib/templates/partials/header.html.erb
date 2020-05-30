@@ -1,0 +1,26 @@
+<header>
+  <div class='top'>
+    <div class='left'>
+      <img width="100" height="100" src="<%= "#{IMAGES_PATH}/flying_book_left.png" %>">
+    </div>
+
+    <div class='center'>
+      <div class='brand'>
+        <a href="<%= CORE_PATH %>"><%= page.config["site_name"] %></a>
+      </div>
+    </div>
+
+    <div class='right'>
+      <img width="100" height="100" src="<%= "#{IMAGES_PATH}/flying_book_right.png" %>">
+    </div>
+  </div>
+
+  <% if page.show_lower_nav? %>
+    <nav>
+      view chapter as&nbsp;
+      <a href="<%= index_path(page.type) %>"> wiki </a>
+      &nbsp;or&nbsp;
+      <a href="<%= pages_path(page.type) %>"> list </a>
+    </nav>
+  <% end %>
+</header>
