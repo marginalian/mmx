@@ -42,9 +42,9 @@ module Mmx
       def root_path(type)
         case type
         when :index, :notecards
-          "../../"
+          "../.."
         else
-          "../../../"
+          "../../.."
         end
       end
     end
