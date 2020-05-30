@@ -13,7 +13,7 @@ module Mmx
     end
 
     def render_partial(path, partial_variables=nil)
-      partial = File.read("#{TEMPLATES_PATH}/partials/#{path}.html.erb")
+      partial = File.read("#{__dir__}/../templates/partials/#{path}.html.erb")
       uber_binding = UberBinding.new(self, partial_variables).public_binding
       ERB.new(partial).result(uber_binding)
     end
@@ -29,11 +29,11 @@ module Mmx
     end
 
     def dest_path
-      "#{SITE_PATH}/#{page.site_file_name}.html"
+      "#{__dir__}/../../../site/#{page.site_file_name}.html"
     end
 
     def template
-      File.read("#{TEMPLATES_PATH}/#{type}.html.erb")
+      File.read("#{__dir__}/../templates/#{type}.html.erb")
     end
 
     def type

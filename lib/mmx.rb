@@ -9,12 +9,6 @@ require 'ostruct'
 require 'yaml'
 
 module Mmx
-  SITE_PATH = "#{__dir__}/../../site".freeze
-  TEMPLATES_PATH = "#{__dir__}/templates".freeze
-  CORE_PATH = "#{__dir__}/../../index.html".freeze
-  STYLESHEET = "#{__dir__}/../styles/main.css".freeze
-  IMAGES_PATH = "#{__dir__}/../../images".freeze
-
   require 'mmx/mixins/composable'
   require 'mmx/mixins/renderable'
 

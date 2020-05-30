@@ -1,17 +1,17 @@
 <header>
   <div class='top'>
     <div class='left'>
-      <img width="100" height="100" src="<%= "#{IMAGES_PATH}/flying_book_left.png" %>">
+      <img width="100" height="100" src="<%= "#{root_path(page.type)}/images/flying_book_left.png" %>">
     </div>
 
     <div class='center'>
       <div class='brand'>
-        <a href="<%= CORE_PATH %>"><%= page.config["site_name"] %></a>
+        <a href="<%= core_path(page.type) %>"><%= page.config["site_name"] %></a>
       </div>
     </div>
 
     <div class='right'>
-      <img width="100" height="100" src="<%= "#{IMAGES_PATH}/flying_book_right.png" %>">
+      <img width="100" height="100" src="<%= "#{root_path(page.type)}/images/flying_book_right.png" %>">
     </div>
   </div>
 
