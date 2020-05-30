@@ -1,56 +1,68 @@
-require_relative "./leaf/syntax_tree"
-require_relative "./leaf/convert"
-
 module Mmx
   class Leaf
+    include Renderable
 
-    attr_reader :path, :nabs
+    attr_reader :chapter, :content, :type
 
-    def initialize(path, nabs)
+    def initialize(chapter, path, type = :index)
+      @chapter = chapter
       @path = path
-      @nabs = nabs
+      @type = type
+      @file_config, @content = extract_config
     end
 
     def base_file_name
       path.split("/").last.sub(/\..*/, '')
     end
 
+    def site_file_name
+      base = type == :index ? base_file_name : "#{type}/#{base_file_name}"
+      "#{chapter.name}/#{base}"
+    end
+
     def file_content
-      File.open(path, "rb").read.force_encoding('UTF-8')
+      @file_content ||=
+        File.open(path, "rb").read.force_encoding('UTF-8')
     end
 
     def file_content_lines
-      file_content.split("\n")
-    end
-
-    def file_summary_lines
-      file_content
-        .gsub(/[a-zA-Z.]\n[a-zA-Z]/) { _1.gsub("\n", "\s") }
-        .gsub(/^-$/, "--")
-        .split("\n")
-        .reject(&:empty?)
-        .first(3)
+      content.split("\n")
     end
 
     def syntax_tree
       SyntaxTree.(file_content_lines)
     end
 
-    def syntax_tree_summary
-      SyntaxTree.(file_summary_lines)
+    def to_html
+      HtmlBuilder.(self, syntax_tree)
     end
 
-    def convert(output_format)
-      self.class.converter_class(output_format).(syntax_tree, nabs)
+    def context
+      @context ||= begin
+        OpenStruct.new({
+          notecards: chapter.notecards,
+          stats: chapter.wiki.stats,
+        })
+      end
     end
 
-    # grepability:
-    # - Mmx::Leaf::Convert::Html
-    # - Mmx::Leaf::Convert::Markdown
-    def self.converter_class(output_format)
-      Object.const_get("Mmx::Leaf::Convert::#{output_format.capitalize}")
-    rescue
-      throw "Cannot find leaf converter class for format: #{output_format}"
+    def show_lower_nav?
+      chapter.pages&.length&.positive?
     end
+
+    def config
+      chapter.wiki.config.merge(file_config)
+    end
+
+    private
+
+    attr_reader :file_config
+
+    def extract_config
+      ConfigExtractor.(file_content)
+    end
+
+    attr_reader :path
   end
 end
+

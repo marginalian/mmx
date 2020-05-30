@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+
+# Usage:
+#
+# call this executable file from the root of any
+# repo that includes mmx as a git submodule:
+#
+#   ./mmx/bin/build
+
+
+require 'benchmark'
+
+bm = Benchmark.realtime do 
+  require_relative "../lib/mmx"
+
+  def fail
+    puts "FAILURE"
+    exit 0
+  end
+
+  fail unless Dir.exist?("./wiki")
+
+  wiki = Mmx::Wiki.new("./wiki")
+  
+  fail unless Mmx::Fret.("./wiki").all?(&:valid?)
+
+  Mmx::Site.refresh(wiki)
+
+  wiki.all_pages.each do |page|
+    Mmx::Renderer.new(page).render
+  end
+end
+
+puts "\nsite rebuilt in #{bm.round(2)} seconds\n\n"
+
+exit 0
+

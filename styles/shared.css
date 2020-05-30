@@ -1,0 +1,145 @@
+html, body {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-size: 18px;
+  line-height: 1.5em;
+  margin-top: 0;
+  color: #292929;
+  background-color: #FFFFEB;
+}
+
+a {
+  text-decoration: none;
+  color: #DD6763;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  padding-bottom: 0.5em;
+  margin-top: 1.5em;
+}
+
+
+main {
+  max-width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0rem 0.5em 3em 0.5em;
+}
+
+main .img-container {
+  padding: 2em 0;
+  background: rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border-radius: 3px;
+}
+
+main .img-container img {
+  max-width: 75%;
+}
+
+main .img-container.dark {
+  opacity: 0.85;
+  background: rgba(0, 0, 0, 0.95);
+}
+
+@media only screen and (max-width: 1000px) {
+  main .img-container {
+    padding: 0;
+    text-align: center;
+  }
+
+  main .img-container img {
+    max-width: 90%;
+  }
+}
+
+header {
+  margin-bottom: 5em;
+  display: flex;
+  flex-direction: column;
+}
+
+header .top {
+  display: flex;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 1em;
+}
+
+header .top .left {
+  text-align: center;
+  padding-top: 1em;
+  flex-shrink: 0;
+  width: 100px; 
+}
+
+header .top .right {
+  text-align: center;
+  padding-top: 1em;
+  flex-shrink: 0;
+  width: 100px; 
+}
+
+header .top .center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  padding: 0em 1em;
+}
+
+header .brand {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: BenchNine;
+  text-align: center;
+  font-size: 3.25em;
+  line-height: 1em;
+  letter-spacing: 2px;
+}
+
+header .brand a {
+  text-decoration: none;
+  color: #292929;
+}
+
+header nav {
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  padding: 0.25em 0;
+}
+
+@media only screen and (max-width: 800px) {
+  header .top .left {
+    display: none;
+  }
+
+  header .top .center {
+    padding: 0;
+  }
+
+  header .top .center .brand {
+    text-align: left;
+  }
+  
+  header nav {
+    justify-content: flex-start;
+  }
+}
+
+.webring {
+  text-align: center;
+}
+
+.webring img {
+  width: 50px;
+}
+

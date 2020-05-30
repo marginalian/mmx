@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+# redirect the root path to specified URL
+File.open('./index.html', 'w') do |f|
+  f.puts <<~HTML
+    <!DOCTYPE html>
+    <html lang='en'>
+    <head>
+      <meta
+        http-equiv = "refresh"
+        content = "0; url = ./site/blurb/index.html"
+      />
+    </head>
+    </html>
+  HTML
+end
+

@@ -1,0 +1,139 @@
+.leaf .caps {
+  font-variant: small-caps;
+  font-weight: 600;
+}
+
+.leaf h1 {
+  font-size: 2.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  line-height: 1.15em;
+  color: #292929;
+}
+
+.leaf h2 {
+  font-size: 1.85em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: strong;
+}
+
+.leaf h3 {
+  font-size: 1.5em;
+  margin-top: 1.75em;
+  margin-bottom: 0.5em;
+  font-weight: strong;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.leaf p {
+  line-height: 1.5em;
+  margin-block-end: 1em;
+}
+
+.leaf ul {
+  margin-block-start: 0.5em;
+  padding-left: 2em;
+}
+
+.leaf blockquote {
+  color: #535353;
+  margin-block-end: 0.75em;
+  margin-block-start:0.75em;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  overflow-wrap: break-word;
+  padding-bottom: 0px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 1em 1em;
+}
+
+.leaf .long blockquote {
+  text-align: justify;
+  text-indent: 1em;
+}
+
+.leaf .nab-source {
+  padding-top: 0.25em;
+  color: #535353;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.leaf .attributed-quote {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 1em 1em;
+}
+
+.leaf .single-blockquote {
+  color: #535353;
+  margin-block-end: 0.75em;
+  margin-block-start:0.75em;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  overflow-wrap: break-word;
+  padding-bottom: 0px;
+}
+
+.leaf strong {
+  font-weight: 600;
+}
+
+.leaf .highlight {
+  background-color: #fff7c9;
+}
+
+.leaf .pull-quote {
+  color: #535353;
+  font-weight: 500;
+  font-size: 1.95em;
+  line-height: 1.15;
+}
+
+.leaf .pull {
+  padding: 2.5em 2em 2.5em 4em;
+  margin-bottom: 2em;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.leaf .pull-quote:before {
+  color: #535353;
+  content: open-quote;
+  font-family: Times New Roman, Times, serif;
+  font-size: 2.25em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  margin-left: -0.75em;
+  vertical-align: -0.4em;
+}
+
+.leaf .indent {
+  text-indent: 1em;
+}
+
+.leaf pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 0.55;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.leaf code {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
