@@ -19,11 +19,9 @@ bm = Benchmark.realtime do
   end
 
   fail unless Dir.exist?("./wiki")
-
-  wiki = Mmx::Wiki.new("./wiki")
-  
   fail unless Mmx::Fret.("./wiki").all?(&:valid?)
 
+  wiki = Mmx::Wiki.new("./wiki")
   Mmx::Site.refresh(wiki)
 
   wiki.all_pages.each do |page|

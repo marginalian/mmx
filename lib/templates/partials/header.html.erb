@@ -17,9 +17,9 @@
 
   <% if page.show_lower_nav? %>
     <nav>
-      view chapter as&nbsp;
+      view the <%= page.chapter.name %> chapter as a&nbsp;
       <a href="<%= index_path(page.type) %>"> wiki </a>
-      &nbsp;or&nbsp;
+      &nbsp;or a&nbsp;
       <a href="<%= pages_path(page.type) %>"> list </a>
     </nav>
   <% end %>
