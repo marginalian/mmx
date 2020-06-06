@@ -90,13 +90,17 @@ module Mmx
 
       def notecard_pull(id)
         notecard = context.notecards.lookup(id)
+        mod_class = notecard.quote.chars.length > 100 ? " long" : ""
 
-        attribution = "<div class='notecard-source'>&mdash;#{notecard.source} - #{notecard.author}</div>"
-        "<div class='pull'><div class='pull-quote'>#{notecard.quote}</div><br>#{attribution}</div>"
+        "<div class='pull'><div class='pull-quote#{mod_class}'>#{notecard.quote}</div><br>#{attribution(notecard)}</div>"
       end
 
       def pull_quote(text)
         "<div class='pull'><div class='pull-quote'>#{text}</div></div>"
+      end
+
+      def stats(name)
+        context.stats.send(name)
       end
 
       def webring
@@ -105,8 +109,7 @@ module Mmx
             <a href='https://webring.xxiivv.com/#random' target='_blank'>
               <img src='https://webring.xxiivv.com/icon.black.svg'/>
             </a>
-            <br>
-            <strong>WEBRING</strong>
+            Margin Chronicles participates in a webring of non-commercial websites.
           </div>
         HTML
       end
@@ -114,7 +117,7 @@ module Mmx
       private
 
       def attribution(notecard)
-        "<div class='notecard-source'>&mdash;&nbsp;#{notecard.source} - #{notecard.author}</div>"
+        "<div class='notecard-source'>&nbsp;#{notecard.source} - #{notecard.author}</div>"
       end
 
       def blockquote(notecard)

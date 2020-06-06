@@ -10,7 +10,7 @@ module Mmx
       end
 
       def page_count
-        pages.length
+        Dir[File.join(wiki.top_directory, '**', '*')].count(&File.method(:file?))
       end
 
       private
@@ -22,6 +22,7 @@ module Mmx
       end
 
       def pages
+
         wiki.chapters.map(&:leaves).flatten
       end
     end

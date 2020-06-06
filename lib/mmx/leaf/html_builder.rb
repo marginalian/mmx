@@ -36,7 +36,11 @@ module Mmx
         return html_string if guide[:tag].nil?
 
         arr = arr.map(&method(guide[:process])) unless guide[:process].nil?
-        inner = arr.map { |txt| "#{s(3)}<#{guide[:tag]}>#{txt}</#{guide[:tag]}>" }.join
+        inner = arr.map do |txt|
+          id = guide[:id].nil? ? "" : guide[:id].(txt)
+
+          "#{s(3)}<#{guide[:tag]} id='#{id}'>#{txt}</#{guide[:tag]}>"
+        end.join
 
         if guide[:wrap].nil?
           "#{html_string}#{inner}"
@@ -76,10 +80,12 @@ module Mmx
       def mapping
         {
           paragraph: { tag: 'p' },
-          heading: -> (lvl) { { tag: "h#{lvl}" } },
+          heading: -> (lvl) do { tag: "h#{lvl}", id: -> (txt) { txt.downcase.gsub("\s", "&#95;") } } end,
           blockquote: { tag: 'blockquote' },
+          break: { html: '<br />' },
           list: { tag: 'li', wrap: 'ul' },
-          break: { html: '<hr>' },
+          line: { html: '<hr>' },
+          double_line: { html: '<hr class="double">' },
           comment: { html: '' },
           space: { html: '' },
           code: { tag: 'div', wrap: 'pre', process: 'escape_html' },

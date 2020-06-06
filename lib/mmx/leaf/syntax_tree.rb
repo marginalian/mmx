@@ -29,8 +29,12 @@ module Mmx
 
       def determine_type(line)
         case line
-        when /^_{3}/
+        when /^\~+$/
           :break
+        when /^={3}$/
+          :double_line
+        when /^_{3}/
+          :line
         when /^\/\s/
           :comment
         when /^-+$/

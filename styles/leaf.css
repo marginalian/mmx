@@ -4,32 +4,38 @@
 }
 
 .leaf h1 {
-  font-size: 2.5em;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  font-weight: bold;
-  line-height: 1.15em;
-  color: #292929;
+  font-family: DM Serif Text;
+  font-size: 3em;
+  margin-top: 0.75em;
+  margin-bottom: 0.1em;
+  font-weight: 400;
+  line-height: 0.9;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .leaf h2 {
-  font-size: 1.85em;
-  margin-top: 1.5em;
+  font-family: Markazi Text;
+  font-size: 2.25em;
+  margin-top: 0.75em;
   margin-bottom: 0.5em;
-  font-weight: strong;
+  font-weight: 500;
 }
 
 .leaf h3 {
-  font-size: 1.5em;
-  margin-top: 1.75em;
+  font-family: Markazi Text;
+  font-size: 1.75em;
+  margin-top: 0.75em;
   margin-bottom: 0.5em;
-  font-weight: strong;
-  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 1000px) {
+  .leaf h1 { font-size: 2.25em; }
 }
 
 .leaf p {
   line-height: 1.5em;
-  margin-block-end: 1em;
+  margin-block-end: 0.75em;
 }
 
 .leaf ul {
@@ -48,9 +54,10 @@
   margin-top: 0px;
   overflow-wrap: break-word;
   padding-bottom: 0px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   padding: 1em 1em;
+  line-height: 1.25;
 }
 
 .leaf .long blockquote {
@@ -58,17 +65,22 @@
   text-indent: 1em;
 }
 
-.leaf .nab-source {
+.leaf .notecard-source {
   padding-top: 0.25em;
+  margin-left: 1.25em;
   color: #535353;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
 }
 
+.leaf .notecard-source::before {
+  margin-left: -1.25em;
+  content: "—";
+}
+
 .leaf .attributed-quote {
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-  padding: 1em 1em;
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 0.5em 1em 0.15em 1em;
 }
 
 .leaf .single-blockquote {
@@ -82,6 +94,7 @@
   margin-top: 0px;
   overflow-wrap: break-word;
   padding-bottom: 0px;
+  line-height: 1.25;
 }
 
 .leaf strong {
@@ -93,28 +106,48 @@
 }
 
 .leaf .pull-quote {
+  font-family: Bebas Neue, sans serif;
   color: #535353;
-  font-weight: 500;
-  font-size: 1.95em;
+  font-size: 2.95em;
   line-height: 1.15;
+}
+
+.leaf .pull-quote.long {
+  font-family: Fjalla One, sans serif;
+  font-size: 1.5em;
+  line-height: 1.5;
 }
 
 .leaf .pull {
   padding: 2.5em 2em 2.5em 4em;
   margin-bottom: 2em;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
+  border-top: 1px solid #535353;
+  border-bottom: 1px solid #535353;
 }
 
 .leaf .pull-quote:before {
   color: #535353;
   content: open-quote;
-  font-family: Times New Roman, Times, serif;
-  font-size: 2.25em;
+  font-family: serif;
+  font-size: 1.75em;
   line-height: 0.1em;
-  margin-right: 0.25em;
+  margin-right: 0.15em;
   margin-left: -0.75em;
-  vertical-align: -0.4em;
+  vertical-align: -0.2em;
+}
+
+.leaf .pull-quote.long:before {
+  font-size: 2.5em;
+}
+
+.leaf .pull .notecard-source {
+  font-family: Open Sans;
+}
+
+@media only screen and (max-width: 1000px) {
+  .leaf .pull-quote { font-size: 2em; }
+  .leaf .pull-quote.long { font-size: 1.25em; }
+  .leaf .pull .notecard-source { font-size: 0.9em; }
 }
 
 .leaf .indent {

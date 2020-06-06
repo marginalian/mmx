@@ -39,6 +39,7 @@ module Mmx
       def summarize(leaf)
         leaf
           .content
+          .gsub(/^\~+$/, "")
           .gsub(/[a-zA-Z.]\n[a-zA-Z]/) { _1.gsub("\n", "\s") }
           .gsub(/^-$/, "--")
           .split("\n")

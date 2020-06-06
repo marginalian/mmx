@@ -1,5 +1,7 @@
 module Mmx
   class Wiki
+    attr_reader :top_directory
+
     def initialize(top_directory)
       @top_directory = top_directory
     end
@@ -31,8 +33,6 @@ module Mmx
 
     CONFIG_PATH = "#{__dir__}/../../../config.yml"
     private_constant :CONFIG_PATH
-
-    attr_reader :top_directory
   end
 end
 
