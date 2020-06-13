@@ -15,6 +15,20 @@ module Mmx
 
       protected
 
+      def editorialize(comment, notecard_id)
+        notecard = context.notecards.lookup(notecard_id)
+
+        <<~HTML
+          <div class="attributed-quote">
+            <div class="single-blockquote">
+              [#{comment}]
+            </div>
+
+            #{blockquote(notecard) + attribution(notecard)}
+          </div>
+        HTML
+      end
+
       def hi(pattern, text)
         text.gsub(pattern) { "<span class='highlight'>#{_1}</span>" }
       end

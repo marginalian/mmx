@@ -54,15 +54,37 @@ module Mmx
       chapter.wiki.config.merge(file_config)
     end
 
+    def title_html
+      HtmlBuilder.(self, two_limb_tree[0..0])
+    end
+
+    def first_paragraph_html
+      HtmlBuilder.(self, two_limb_tree[1..1])
+    end
+
+    ##
+    # syntax tree for the first two usable lines:
+    # - title
+    # - paragraph 1
+    def two_limb_tree
+      Leaf::SyntaxTree.(
+        content
+          .gsub(/^\~+$/, "")
+          .gsub(/[a-zA-Z.]\n[a-zA-Z]/) { _1.gsub("\n", "\s") }
+          .gsub(/^-$/, "--")
+          .split("\n")
+          .reject(&:empty?)
+          .first(3)
+      )
+    end
+
     private
 
-    attr_reader :file_config
+    attr_reader :file_config, :path
 
     def extract_config
       ConfigExtractor.(file_content)
     end
-
-    attr_reader :path
   end
 end
 

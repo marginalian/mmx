@@ -1,0 +1,17 @@
+.allpagesindex h2 {
+  font-family: Markazi Text;
+  font-size: 2em;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  font-weight: 400;
+}
+
+.allpagesindex section {
+  margin-top: 1.75em;
+  padding-bottom: 2em;
+}
+
+.allpagesindex p {
+  margin: 0.25em 0;
+}
+

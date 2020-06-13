@@ -44,7 +44,7 @@
 }
 
 .leaf blockquote {
-  color: #535353;
+  color: #444;
   margin-block-end: 0.75em;
   margin-block-start:0.75em;
   margin-inline-end: 0px;
@@ -68,7 +68,7 @@
 .leaf .notecard-source {
   padding-top: 0.25em;
   margin-left: 1.25em;
-  color: #535353;
+  color: #444;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -84,7 +84,7 @@
 }
 
 .leaf .single-blockquote {
-  color: #535353;
+  color: #444;
   margin-block-end: 0.75em;
   margin-block-start:0.75em;
   margin-inline-end: 0px;
@@ -107,7 +107,7 @@
 
 .leaf .pull-quote {
   font-family: Bebas Neue, sans serif;
-  color: #535353;
+  color: #333;
   font-size: 2.95em;
   line-height: 1.15;
 }
@@ -121,12 +121,12 @@
 .leaf .pull {
   padding: 2.5em 2em 2.5em 4em;
   margin-bottom: 2em;
-  border-top: 1px solid #535353;
-  border-bottom: 1px solid #535353;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
 }
 
 .leaf .pull-quote:before {
-  color: #535353;
+  color: #333;
   content: open-quote;
   font-family: serif;
   font-size: 1.75em;

@@ -17,6 +17,7 @@ module Mmx
   require 'mmx/fret'
 
   require 'mmx/leaf'
+  require 'mmx/leaf/all_pages_index'
   require 'mmx/leaf/config_extractor'
   require 'mmx/leaf/emender'
   require 'mmx/leaf/html_builder'

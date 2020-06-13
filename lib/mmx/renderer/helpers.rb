@@ -5,6 +5,8 @@ module Mmx
 
       def stylesheet_path(type)
         case type
+        when :all_pages
+          "../mmx/styles/main.css"
         when :index, :notecards
           "../../mmx/styles/main.css"
         else
@@ -14,6 +16,8 @@ module Mmx
 
       def core_path(type)
         case type
+        when :all_pages
+          "../index.html"
         when :index, :notecards
           "../../index.html"
         else
@@ -23,6 +27,8 @@ module Mmx
 
       def index_path(type)
         case type
+        when :all_pages
+          nil
         when :index, :notecards
           "./index.html"
         else
@@ -32,6 +38,8 @@ module Mmx
 
       def pages_path(type)
         case type
+        when :all_pages
+          nil
         when :index, :notecards
           "./pages/index.html"
         else
@@ -41,6 +49,8 @@ module Mmx
 
       def root_path(type)
         case type
+        when :all_pages
+          ".."
         when :index, :notecards
           "../.."
         else

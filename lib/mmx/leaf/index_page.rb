@@ -23,28 +23,14 @@ module Mmx
 
       def summaries
         leaves.map do |leaf|
-          summary = summarize(leaf)
-          tree = Leaf::SyntaxTree.(summary)
-          html = Leaf::HtmlBuilder.(leaf, tree)
-
           <<~HTML
-            #{html}
+            #{leaf.title_html}
+            #{leaf.first_paragraph_html}
             <a class='read-more' href='#{leaf.base_file_name}.html'>
               read more
             </a>
           HTML
         end
-      end
-
-      def summarize(leaf)
-        leaf
-          .content
-          .gsub(/^\~+$/, "")
-          .gsub(/[a-zA-Z.]\n[a-zA-Z]/) { _1.gsub("\n", "\s") }
-          .gsub(/^-$/, "--")
-          .split("\n")
-          .reject(&:empty?)
-          .first(3)
       end
     end
   end

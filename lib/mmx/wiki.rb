@@ -22,7 +22,11 @@ module Mmx
     end
 
     def all_pages
-      chapters.map(&:leaves).flatten(1)
+      chapters.map(&:leaves).flatten(1).push(all_pages_index)
+    end
+
+    def all_pages_index
+      Leaf::AllPagesIndex.new(chapters.map(&:pages).compact.flatten(1))
     end
 
     def all_notecards
