@@ -39,6 +39,8 @@ main {
 }
 
 main .img-container {
+  padding: 0;
+  text-align: center;
 }
 
 main .img-container img {
