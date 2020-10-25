@@ -9,6 +9,8 @@ module Mmx
       end
 
       def call
+        return "" if syntax_tree.nil?
+
         syntax_tree
           .reduce("", &method(:wrap))
           .then(&method(:format))
