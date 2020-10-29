@@ -74,6 +74,7 @@ module Mmx
           .gsub(/^-$/, "--")
           .split("\n")
           .reject(&:empty?)
+          .reject { |line| line[/^\<\%/] }
           .first(3)
       )
     end
