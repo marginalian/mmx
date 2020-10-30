@@ -26,7 +26,8 @@ module Mmx
     end
 
     def all_pages_index
-      Leaf::AllPagesIndex.new(chapters.map(&:pages).compact.flatten(1))
+      sorted_pages = chapters.map(&:pages).compact.flatten(1).sort_by(&:base_file_name).reverse
+      Leaf::AllPagesIndex.new(sorted_pages)
     end
 
     def all_notecards
