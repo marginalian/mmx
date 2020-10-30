@@ -25,7 +25,11 @@ module Mmx
     end
 
     def html
-      ERB.new(template).result(uber_binding)
+      ERB.new(template, trim_mode: ">").result(uber_binding)
+        # extra trimming missed by trim_mode
+        .split("\n")
+        .reject { |line| !line.empty? && line.strip.empty? }
+        .join("\n")
     end
 
     def dest_path

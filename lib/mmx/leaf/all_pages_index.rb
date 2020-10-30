@@ -1,6 +1,8 @@
 module Mmx
   class Leaf
     class AllPagesIndex
+      include Renderable
+
       attr_reader :leaves
 
       def initialize(leaves)

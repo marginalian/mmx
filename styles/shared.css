@@ -8,7 +8,7 @@ html, body {
 
 a {
   text-decoration: none;
-  color: #cf5955;
+  color: #0366d6;
 }
 
 a:hover {
@@ -95,7 +95,7 @@ header nav {
 
 .sans-serif-text {
   font-size: 0.75em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-family: Open Sans, sans serif;
 }
 

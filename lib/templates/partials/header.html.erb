@@ -5,8 +5,18 @@
     </div>
   </div>
 
-  <% if page.show_lower_nav? %>
-    <nav>
+  <nav>
+  <% if page.custom_nav_links %>
+    <% page.custom_nav_links.map.with_index do |(name, path), index| %>
+      <div class="sans-serif-text">
+        <% if index > 0 %>
+          &nbsp; &bull; &nbsp;
+        <% end %>
+        <a href="<%= page.path_to_root %><%= path %>"><%= name %></a>
+      </div>
+    <% end %>
+  <% else %>
+    <% if page.show_lower_nav? %>
       <div class="left sans-serif-text">
         &bull;&nbsp;<%= page.chapter.name %>&nbsp;&bull;&nbsp;
       </div>
@@ -15,6 +25,7 @@
         &nbsp;|&nbsp;
         <a href="<%= pages_path(page.type) %>"> list </a>
       </div
-    </nav>
+    <% end %>
   <% end %>
+  </nav>
 </header>
