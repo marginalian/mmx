@@ -39,12 +39,11 @@ module Mmx
               <div class="sans-serif-text">
                 &bull;&nbsp;#{leaf.chapter.name}&nbsp;&bull;&nbsp;
               </div>
-              <hr class="marginless" />
               #{leaf.first_paragraph_html}
               <a class='read-more' href='#{leaf.chapter.name}/pages/#{leaf.base_file_name}.html'>
                 read more
               </a>
-              <br>
+              <hr/>
             </section>
           HTML
         end
