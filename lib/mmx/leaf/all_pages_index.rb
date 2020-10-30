@@ -37,7 +37,7 @@ module Mmx
             <section>
               #{leaf.title_html}
               <div class="sans-serif-text">
-                &bull;&nbsp;#{leaf.chapter.name} chapter&nbsp;&bull;&nbsp;
+                &bull;&nbsp;#{leaf.chapter.name}&nbsp;&bull;&nbsp;
               </div>
               <hr class="marginless" />
               #{leaf.first_paragraph_html}
