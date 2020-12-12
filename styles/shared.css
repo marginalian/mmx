@@ -104,6 +104,16 @@ header nav .right {
   flex: 1;
 }
 
+figure {
+  margin: 0 auto;
+}
+
+figcaption {
+  color: #969696;
+  text-align: right;
+  font-size: 0.75em;
+}
+
 .webring {
   display: flex;
   align-items: center;

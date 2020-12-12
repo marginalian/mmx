@@ -37,11 +37,12 @@ module Mmx
         text.gsub(Regexp.new(pattern)) { "<span class='highlight'>#{_1}</span>" }
       end
 
-      def img(path)
+      def img(path, attribution=nil)
         <<~HTML
-          <div class="img-container">
+          <figure class="img-container">
             <img src="#{path}">
-          </div>
+            <figcaption>#{attribution}</figcaption>
+          </figure>
         HTML
       end
 
