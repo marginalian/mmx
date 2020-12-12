@@ -1,0 +1,28 @@
+html, body { 
+  font-family: Noto Serif, serif;
+} 
+
+.leaf h1 { 
+  font-family: DM Serif Text, serif; 
+  font-weight: 400;
+  font-size: 2.5em;
+} 
+
+.leaf h2 { 
+  font-family: Markazi Text, serif;
+  font-weight: 500;
+  font-size: 2.25em;
+}
+
+.leaf h3 {
+  font-family: Markazi Text;
+  font-size: 1.75em;
+  font-weight: 500;
+}
+
+.indexpage h2 {
+  font-family: Markazi Text;
+  font-size: 2em;
+  font-weight: 400;
+}
+

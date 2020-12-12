@@ -1,7 +1,7 @@
 html, body {
   font-family: Noto Serif;
   font-size: 20px;
-  line-height: 1.5em;
+  line-height: 1.25em;
   margin-top: 0;
   color: #111;
 }
@@ -9,10 +9,6 @@ html, body {
 a {
   text-decoration: none;
   color: #0366d6;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 hr {
@@ -86,7 +82,7 @@ header .brand a {
 }
 
 header nav {
-  padding: 0.25em 0;
+  padding: 0.125em 0;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid #111;
@@ -121,5 +117,9 @@ header nav .right {
 
 .marginless {
   margin: 0;
+}
+
+.top-link {
+  font-variant: small-caps;
 }
 

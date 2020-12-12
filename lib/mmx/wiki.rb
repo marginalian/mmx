@@ -13,7 +13,13 @@ module Mmx
 
     def config
       @config ||=
-        Utils.read_yaml(CONFIG_PATH)
+        Utils.read_yaml(CONFIG_PATH).merge(default_config)
+    end
+
+    def default_config
+      {
+        "font_type" => "serif",
+      }
     end
 
     def stats

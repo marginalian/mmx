@@ -117,6 +117,14 @@ module Mmx
         context.stats.send(name)
       end
 
+      def top
+        <<~HTML
+          <a href='#top' class='top-link'>
+            &utri;&nbsp;&nbsp;back to top
+          </a>
+        HTML
+      end
+
       def webring
         <<~HTML
           <div class="webring">

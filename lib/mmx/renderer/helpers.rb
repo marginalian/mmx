@@ -6,11 +6,11 @@ module Mmx
       def stylesheet_path(type)
         case type
         when :all_pages
-          "../mmx/styles/main.css"
+          "../mmx/styles"
         when :index, :notecards
-          "../../mmx/styles/main.css"
+          "../../mmx/styles"
         else
-          "../../../mmx/styles/main.css"
+          "../../../mmx/styles"
         end
       end
 

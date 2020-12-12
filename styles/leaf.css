@@ -4,29 +4,20 @@
 }
 
 .leaf h1 {
-  font-family: DM Serif Text;
-  font-size: 3em;
   margin-top: 0.75em;
   margin-bottom: 0.1em;
-  font-weight: 400;
   line-height: 0.9;
   color: rgba(0, 0, 0, 0.8);
 }
 
 .leaf h2 {
-  font-family: Markazi Text;
-  font-size: 2.25em;
   margin-top: 0.75em;
   margin-bottom: 0.5em;
-  font-weight: 500;
 }
 
 .leaf h3 {
-  font-family: Markazi Text;
-  font-size: 1.75em;
   margin-top: 0.75em;
   margin-bottom: 0.5em;
-  font-weight: 500;
 }
 
 @media only screen and (max-width: 1000px) {
