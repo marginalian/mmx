@@ -133,3 +133,10 @@ figcaption {
   font-variant: small-caps;
 }
 
+.end {
+  margin-top: 2em;
+  text-align: center;
+  color: #616161;
+  width: 100%;
+}
+
