@@ -21,3 +21,13 @@
     </article>
   </main>
 </body>
+
+<script>
+  function goToRandomNotecard() {
+    const collection = document.getElementsByClassName("id");
+    const array = [].slice.call(collection);
+    const randomNotecard = array[Math.floor(Math.random() * array.length)];
+
+    randomNotecard.scrollIntoView();
+  }
+</script>
