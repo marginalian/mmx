@@ -61,11 +61,13 @@ header {
   margin-bottom: 2.5em;
   display: flex;
   flex-direction: column;
+  border: 3px solid #111;
+  margin-top: 1em;
+  padding: 0 0.75em 0.5em;
 }
 
 header .top {
   display: flex;
-  border-bottom: 3px solid #111;
   padding: 1em 0 0.5em 0;
 }
 
@@ -85,8 +87,8 @@ header nav {
   padding: 0.125em 0;
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid #111;
   font-size: 1.15em;
+  font-weight: 600;
 }
 
 .sans-serif-text {
