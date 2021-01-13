@@ -13,7 +13,7 @@ module Mmx
 
     def config
       @config ||=
-        Utils.read_yaml(CONFIG_PATH).merge(default_config)
+        default_config.merge(Utils.read_yaml(CONFIG_PATH))
     end
 
     def default_config

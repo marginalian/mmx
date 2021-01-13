@@ -6,6 +6,7 @@ module Mmx
       def initialize(leaf, syntax_tree)
         @leaf = leaf
         @syntax_tree = syntax_tree
+        @todo_id = 0
       end
 
       def call
@@ -28,6 +29,10 @@ module Mmx
         type = tree_entry[:type]
         arr = tree_entry[:arr]
 
+        if [:todo_checked, :todo_unchecked].include?(type)
+          @todo_id = @todo_id + 1
+        end
+
         if type == :heading
           guide = mapping[:heading].(tree_entry[:lvl])
         else
@@ -41,7 +46,7 @@ module Mmx
         inner = arr.map do |txt|
           id = guide[:id].nil? ? "" : guide[:id].(txt)
 
-          "#{s(3)}<#{guide[:tag]} id='#{id}'>#{txt}</#{guide[:tag]}>"
+          "#{s(3)}<#{guide[:tag]} id='#{id}' #{guide[:props]}>#{txt}</#{guide[:tag]}>"
         end.join
 
         if guide[:wrap].nil?
@@ -91,6 +96,9 @@ module Mmx
           comment: { html: '' },
           space: { html: '' },
           code: { tag: 'div', wrap: 'pre', process: 'escape_html' },
+          todo_checked: { html: "<input disabled type=\"checkbox\" checked id=\"todo-#{@todo_id}\">&nbsp;" },
+          todo_unchecked: { html: "<input disabled type=\"checkbox\"  id=\"todo-#{@todo_id}\">&nbsp;" },
+          todo_label: { tag: 'label', props: "for=\"todo-#{@todo_id}\"" },
         }
       end
 

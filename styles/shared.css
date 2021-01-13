@@ -50,29 +50,25 @@ main .img-container.dark {
   background: rgba(0, 0, 0, 0.95);
 }
 
-@media only screen and (max-width: 1000px) {
-  main .img-container {
-    padding: 0;
-    text-align: center;
-  }
-}
-
 header {
-  margin-bottom: 2.5em;
+  margin-bottom: 4em;
   display: flex;
   flex-direction: column;
-  border: 3px solid #111;
   margin-top: 1em;
-  padding: 0 0.75em 0.5em;
+  border: 8px double #dfe2e5;
+  padding: 0.5em;
 }
 
 header .top {
   display: flex;
-  padding: 1em 0 0.5em 0;
+  flex-direction: row;
+  padding: 0 0 0.5em 0;
 }
 
 header .brand {
+  display: flex;
   font-family: Markazi Text;
+  font-style: italic;
   font-weight: 700;
   text-align: left;
   font-size: 2em;
@@ -84,9 +80,9 @@ header .brand a {
 }
 
 header nav {
-  padding: 0.125em 0;
+  width: 100%;
+  padding: 0.125em;
   display: flex;
-  flex-direction: row;
   font-size: 1.15em;
   font-weight: 600;
 }
@@ -140,5 +136,12 @@ figcaption {
   text-align: center;
   color: #616161;
   width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  main .img-container {
+    padding: 0;
+    text-align: center;
+  }
 }
 

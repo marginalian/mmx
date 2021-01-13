@@ -5,6 +5,7 @@ module Mmx
 
       def initialize(lines)
         @lines = lines
+        @checkbox_id_num = 0
       end
 
       def call
@@ -41,6 +42,8 @@ module Mmx
           :heading
         when /^-\s./
           :list
+        when /^\s*\[.\]/
+          :checkbox
         when /^\s{2}\w/
           :potential_list_item
         when /^\|{2}\s/
@@ -55,6 +58,12 @@ module Mmx
       def heading(_tree, prev, line)
         prev[:type] = :heading
         prev[:lvl] = line.strip.length
+      end
+
+      def checkbox(tree, prev, line)
+        tree.push({ type: /\[x\]/.match?(line) ? :todo_checked : :todo_unchecked })
+        tree.push({ type: :todo_label, arr: [line.gsub(/^\s*\[.\]/, '').strip] })
+        tree.push({ type: :break })
       end
 
       def potential_list_item(tree, prev, line)
