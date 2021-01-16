@@ -164,22 +164,29 @@
 }
 
 .leaf input[type="checkbox"] + label {
-  display: inline-block;
-  margin-left: 100px;
-  margin-right: -100px;
+  display: block;
+  padding-left: 1.5em;
+  position: relative;
+} 
+
+.leaf input[type="checkbox"] + label::before {
+  content: "\2610";
+  position: absolute;
+  left: -1px;
+  font-family: Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
 } 
 
 .leaf input[type="checkbox"] {
-  display: inline-block;
-  margin-right: -100px;
-  margin-top: 5px;
-  vertical-align: top;
-  height: 16px;
-  width: 16px;
+  display: none; 
 }
 
 input[type="checkbox"]:checked + label {
   color: rgba(0, 0, 0, 0.5);
+}
+
+input[type="checkbox"]:checked + label::before {
+  content: "\2612";
 }
 
 .leaf hr {

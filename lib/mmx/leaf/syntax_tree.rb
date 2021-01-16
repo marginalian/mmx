@@ -63,7 +63,6 @@ module Mmx
       def checkbox(tree, prev, line)
         tree.push({ type: /\[x\]/.match?(line) ? :todo_checked : :todo_unchecked })
         tree.push({ type: :todo_label, arr: [line.gsub(/^\s*\[.\]/, '').strip] })
-        tree.push({ type: :break })
       end
 
       def potential_list_item(tree, prev, line)

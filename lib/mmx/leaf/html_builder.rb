@@ -96,8 +96,8 @@ module Mmx
           comment: { html: '' },
           space: { html: '' },
           code: { tag: 'div', wrap: 'pre', process: 'escape_html' },
-          todo_checked: { html: "<input disabled type=\"checkbox\" checked id=\"todo-#{@todo_id}\">&nbsp;" },
-          todo_unchecked: { html: "<input disabled type=\"checkbox\"  id=\"todo-#{@todo_id}\">&nbsp;" },
+          todo_checked: { html: "<input disabled type=\"checkbox\" checked id=\"todo-#{@todo_id}\">" },
+          todo_unchecked: { html: "<input disabled type=\"checkbox\"  id=\"todo-#{@todo_id}\">" },
           todo_label: { tag: 'label', props: "for=\"todo-#{@todo_id}\"" },
         }
       end
