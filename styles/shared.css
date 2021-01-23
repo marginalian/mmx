@@ -1,14 +1,18 @@
 html, body {
-  font-family: Noto Serif;
   font-size: 20px;
-  line-height: 1.25em;
+  line-height: 1.5em;
   margin-top: 0;
   color: #111;
+  margin: 0;
 }
 
 a {
-  text-decoration: none;
-  color: #0366d6;
+ color: #111;
+}
+
+.top-link {
+  font-size: 0.8em;
+  font-variant: small-caps;
 }
 
 hr {
@@ -54,15 +58,23 @@ header {
   margin-bottom: 4em;
   display: flex;
   flex-direction: column;
-  margin-top: 1em;
-  border: 8px double #dfe2e5;
-  padding: 0.5em;
 }
 
-header .top {
+header .brand-wrapper {
+  background: #222;
+}
+
+header .bound-and-centered {
+  max-width: 40em;
+  width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header .header-content {
   display: flex;
   flex-direction: row;
-  padding: 0 0 0.5em 0;
+  padding: 0.5em 0 0;
 }
 
 header .brand {
@@ -72,11 +84,12 @@ header .brand {
   font-weight: 700;
   text-align: left;
   font-size: 2em;
+  line-height: 0.65em;
 }
 
 header .brand a {
   text-decoration: none;
-  color: #292929;
+  color: white;
 }
 
 header nav {
@@ -84,7 +97,13 @@ header nav {
   padding: 0.125em;
   display: flex;
   font-size: 1.15em;
-  font-weight: 600;
+  font-weight: 700;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+header nav a {
+  text-decoration: none;
 }
 
 .sans-serif-text {
@@ -107,9 +126,10 @@ figure {
 }
 
 figcaption {
-  color: #969696;
   text-align: right;
-  font-size: 0.75em;
+  font-size: 0.65em;
+  margin-top: -0.5em;
+  font-style: italic;
 }
 
 .webring {
@@ -127,21 +147,17 @@ figcaption {
   margin: 0;
 }
 
-.top-link {
-  font-variant: small-caps;
-}
-
-.end {
-  margin-top: 2em;
-  text-align: center;
-  color: #616161;
-  width: 100%;
-}
-
 @media only screen and (max-width: 1000px) {
   main .img-container {
     padding: 0;
     text-align: center;
+  }
+
+  header .bound-and-centered {
+    max-width: 40em;
+    width: auto;
+    display: block;
+    padding: 0 0.5em; 
   }
 }
 

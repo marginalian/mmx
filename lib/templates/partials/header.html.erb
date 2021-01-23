@@ -1,34 +1,41 @@
 <header id='top'>
-  <div class='top'>
-    <div class='brand'>
-      <a href="<%= core_path(page.type) %>"><%= page.config["site_name"] %></a>
+  <div class='brand-wrapper'>
+    <div class='bound-and-centered'>
+      <div class='header-content'>
+        <div class='brand'>
+          <a href="<%= core_path(page.type) %>"><%= page.config["site_name"] %></a>
+        </div>
+        <div style='width:100%;'></div>
+      </div>
     </div>
-    <div style='width:100%;'></div>
   </div>
-
-  <% if page.custom_nav_links %>
-    <nav>
-      <% page.custom_nav_links.map.with_index do |(name, path), index| %>
-        <div class="sans-serif-text">
-          <% if index > 0 %>
-            &nbsp; &bull; &nbsp;
+  <div class='nav-wrapper'>
+    <div class='bound-and-centered'>
+      <% if page.custom_nav_links %>
+        <nav>
+          <% page.custom_nav_links.map.with_index do |(name, path), index| %>
+            <div class="sans-serif-text">
+              <% if index > 0 %>
+                &nbsp; &bull; &nbsp;
+              <% end %>
+              <a href="<%= page.path_to_root %><%= path %>"><%= name %></a>
+            </div>
           <% end %>
-          <a href="<%= page.path_to_root %><%= path %>"><%= name %></a>
-        </div>
+        </nav>
+      <% else %>
+        <% if page.show_lower_nav? %>
+          <nav>
+            <div class="left sans-serif-text">
+              &bull;&nbsp;<%= page.chapter.name %>&nbsp;&bull;&nbsp;
+            </div>
+            <div class="right sans-serif-text">
+              <a href="<%= index_path(page.type) %>"> wiki </a>
+              &nbsp;|&nbsp;
+              <a href="<%= pages_path(page.type) %>"> list </a>
+            </div
+          </nav>
+        <% end %>
       <% end %>
-    </nav>
-  <% else %>
-    <% if page.show_lower_nav? %>
-      <nav>
-        <div class="left sans-serif-text">
-          &bull;&nbsp;<%= page.chapter.name %>&nbsp;&bull;&nbsp;
-        </div>
-        <div class="right sans-serif-text">
-          <a href="<%= index_path(page.type) %>"> wiki </a>
-          &nbsp;|&nbsp;
-          <a href="<%= pages_path(page.type) %>"> list </a>
-        </div
-      </nav>
-    <% end %>
-  <% end %>
+    </div> 
+  </div> 
 </header>
