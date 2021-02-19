@@ -4,8 +4,8 @@ module Mmx
       proc(&method(:call))
     end
 
-    def call(...)
-      new(...).call
+    def call(*args)
+      new(*args).call
     end
   end
 end

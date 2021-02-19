@@ -70,7 +70,7 @@ module Mmx
       Leaf::SyntaxTree.(
         content
           .gsub(/^\~+$/, "")
-          .gsub(/[a-zA-Z.]\n[a-zA-Z]/) { _1.gsub("\n", "\s") }
+          .gsub(/[a-zA-Z.]\n[a-zA-Z]/) { |ln| ln.gsub("\n", "\s") }
           .gsub(/^-$/, "--")
           .split("\n")
           .reject(&:empty?)

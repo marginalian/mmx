@@ -59,10 +59,10 @@ module Mmx
       def format(markup)
         markup
           .then { |string| ERB.new(string).result(Emender.(leaf)) }
+          .gsub(/`(.*?)`/, &method(:codify))
           .gsub(/-{2}/, "&mdash;")
           .gsub(/__(.*?)__/, '<strong>\1</strong>')
           .gsub(/_(.*?)_/, '<em>\1</em>')
-          .gsub(/`(.*?)`/, &method(:codify))
       end
 
       def escape_html(string)
@@ -70,9 +70,7 @@ module Mmx
           .gsub("&", "&amp;")
           .gsub("<", "&lt;")
           .gsub(">", "&gt;")
-          # do not process emender expressions:
-          .gsub("{", "&#123;")
-          .gsub("}", "&#125;")
+          .gsub("_", "&lowbar;")
       end
 
       def codify(match)

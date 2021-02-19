@@ -26,8 +26,7 @@ module Mmx
 
     def html
       ERB.new(template, trim_mode: ">").result(uber_binding)
-        # extra trimming missed by trim_mode
-        .split("\n")
+        .split("\n") # extra trimming missed by trim_mode
         .reject { |line| !line.empty? && line.strip.empty? }
         .join("\n")
     end

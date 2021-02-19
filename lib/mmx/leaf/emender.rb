@@ -30,11 +30,11 @@ module Mmx
       end
 
       def hi(pattern, text)
-        text.gsub(pattern) { "<span class='highlight'>#{_1}</span>" }
+        text.gsub(pattern) { |m| "<span class='highlight'>#{m}</span>" }
       end
 
       def hi_exp(pattern, text)
-        text.gsub(Regexp.new(pattern)) { "<span class='highlight'>#{_1}</span>" }
+        text.gsub(Regexp.new(pattern)) { |m| "<span class='highlight'>#{m}</span>" }
       end
 
       def img(path, attribution=nil)
