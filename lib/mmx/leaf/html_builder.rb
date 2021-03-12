@@ -86,7 +86,7 @@ module Mmx
         {
           paragraph: { tag: 'p' },
           heading: -> (lvl) do { tag: "h#{lvl}", id: -> (txt) { txt.downcase.gsub("\s", "&#95;") } } end,
-          blockquote: { tag: 'blockquote' },
+          blockquote: { tag: 'p', wrap: 'blockquote' },
           break: { html: '<br />' },
           list: { tag: 'li', wrap: 'ul' },
           line: { html: '<hr>' },

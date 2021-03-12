@@ -81,7 +81,7 @@ module Mmx
         text = line.strip
 
         if prev&.fetch(:type) == :paragraph
-          prev[:arr].last.concat("\s#{text}")
+          prev[:arr].last.concat("\n#{text}")
         else
           tree.push({ type: :paragraph, arr: [text] })
         end
@@ -96,7 +96,7 @@ module Mmx
         end
 
         if prev&.fetch(:type) == :blockquote
-          prev[:arr].last.concat("\s#{text_without_prefix}")
+          prev[:arr].push(text_without_prefix)
         else
           tree.push({ type: :blockquote, arr: [text_without_prefix] })
         end
