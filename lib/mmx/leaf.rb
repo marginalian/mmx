@@ -72,6 +72,7 @@ module Mmx
           .gsub(/^\~+$/, "")
           .gsub(/[a-zA-Z.]\n[a-zA-Z]/) { |ln| ln.gsub("\n", "\s") }
           .gsub(/^-$/, "--")
+          .gsub("_", "")
           .split("\n")
           .reject(&:empty?)
           .reject { |line| line[/^\<\%/] }

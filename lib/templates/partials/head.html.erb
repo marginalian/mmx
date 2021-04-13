@@ -5,5 +5,5 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <link rel='stylesheet' type='text/css' href=<%= "#{stylesheet_path(page.type)}/main.css" %>>
 <link rel='stylesheet' type='text/css' href=<%= "#{stylesheet_path(page.type)}/#{page.config['font_type']}.css" %>>
-<title><%= page.config["site_name"] %></title>
+<title><%= page.config["page_title"] || page.config["site_name"] %></title>
 
