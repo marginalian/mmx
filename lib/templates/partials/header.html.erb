@@ -2,33 +2,37 @@
   <div class='brand-wrapper'>
     <div class='bound-and-centered'>
       <div class='header-content'>
+
         <div class='brand'>
           <a href="<%= core_path(page.type) %>"><%= page.config["site_name"] %></a>
         </div>
-        <div style='width:100%;'></div>
+
+        <div class='custom-nav-wrapper'>
+          <% if page.custom_nav_links %>
+            <nav>
+              <% page.custom_nav_links.map.with_index do |(name, path), index| %>
+                <% if index > 0 %>
+                  &nbsp; &bull; &nbsp;
+                <% end %>
+                <a href="<%= page.path_to_root %><%= path %>"><%= name %></a>
+              <% end %>
+            </nav>
+          <% end %>
+        </div>
+
       </div>
     </div>
   </div>
+
   <div class='nav-wrapper'>
     <div class='bound-and-centered'>
-      <% if page.custom_nav_links %>
-        <nav>
-          <% page.custom_nav_links.map.with_index do |(name, path), index| %>
-            <div class="sans-serif-text">
-              <% if index > 0 %>
-                &nbsp; &bull; &nbsp;
-              <% end %>
-              <a href="<%= page.path_to_root %><%= path %>"><%= name %></a>
-            </div>
-          <% end %>
-        </nav>
-      <% else %>
+      <% if !page.custom_nav_links %>
         <% if page.show_lower_nav? %>
           <nav>
-            <div class="left sans-serif-text">
+            <div class="left>
               &bull;&nbsp;<%= page.chapter.name %>&nbsp;&bull;&nbsp;
             </div>
-            <div class="right sans-serif-text">
+            <div class="right>
               <a href="<%= index_path(page.type) %>"> wiki </a>
               &nbsp;|&nbsp;
               <a href="<%= pages_path(page.type) %>"> list </a>
@@ -39,3 +43,4 @@
     </div> 
   </div> 
 </header>
+

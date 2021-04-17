@@ -61,12 +61,12 @@ header {
 }
 
 header .brand-wrapper {
-  background: #222;
+  background: #333;
 }
 
 header .bound-and-centered {
-  max-width: 40em;
-  width: 40em;
+  max-width: 50em;
+  width: 50em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -74,7 +74,7 @@ header .bound-and-centered {
 header .header-content {
   display: flex;
   flex-direction: row;
-  padding: 0.5em 0 0;
+  padding: 0.5em 0;
 }
 
 header .brand {
@@ -85,6 +85,8 @@ header .brand {
   text-align: left;
   font-size: 2em;
   line-height: 0.65em;
+  margin-left: 0.45em;
+  text-indent: -0.45em;
 }
 
 header .brand a {
@@ -92,18 +94,33 @@ header .brand a {
   color: white;
 }
 
-header nav {
+header .custom-nav-wrapper {
   width: 100%;
-  padding: 0.125em;
+  color: white;
   display: flex;
-  font-size: 1.15em;
-  font-weight: 700;
   justify-content: flex-end;
   align-items: flex-end;
 }
 
+header .custom-nav-wrapper a {
+  color: white;
+}
+
+header nav {
+  width: 100%;
+  padding: 0.25em 0.125em 0.125em;
+  display: flex;
+  font-weight: 700;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 0.85em;
+  text-transform: capitalize;
+  font-family: Open Sans, sans serif;
+}
+
 header nav a {
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .sans-serif-text {
