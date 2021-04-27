@@ -86,7 +86,7 @@
 
 .leaf .pull-quote {
   font-family: Bebas Neue, sans serif;
-  font-size: 2.5em;
+  font-size: 2em;
   line-height: 1.15;
   font-style: italic;
 }
@@ -98,31 +98,17 @@
 }
 
 .leaf .pull {
-  padding: 1.5em 2em 1.5em 4em;
-}
-
-.leaf .pull-quote:before {
-  content: open-quote;
-  font-family: serif;
-  font-size: 1.75em;
-  line-height: 0.1em;
-  margin-right: 0.15em;
-  margin-left: -0.75em;
-  vertical-align: -0.2em;
+  padding: 1.5em 2em 1em 2em;
+  color: #333;
 }
 
 .leaf .pull-quote.long:before {
   font-size: 2.5em;
 }
 
-.leaf .pull .notecard-source {
-  font-family: Open Sans;
-}
-
 @media only screen and (max-width: 1000px) {
   .leaf .pull-quote { font-size: 2em; }
   .leaf .pull-quote.long { font-size: 1.25em; }
-  .leaf .pull .notecard-source { font-size: 0.9em; }
 }
 
 .leaf .indent {

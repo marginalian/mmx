@@ -107,7 +107,7 @@ module Mmx
         notecard = context.notecards.lookup(id)
         mod_class = notecard.quote.chars.length > 100 ? " long" : ""
 
-        "<div class='pull'><div class='pull-quote#{mod_class}'>#{notecard.quote}</div><br>#{attribution(notecard)}</div>"
+        "<div class='pull'><div class='pull-quote#{mod_class}'>#{notecard.quote}</div>#{attribution(notecard)}</div>"
       end
 
       def pull_quote(text)
