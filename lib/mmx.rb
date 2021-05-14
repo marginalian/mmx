@@ -23,6 +23,7 @@ module Mmx
   require 'mmx/leaf/html_builder'
   require 'mmx/leaf/index_page'
   require 'mmx/leaf/syntax_tree'
+  require 'mmx/leaf/syntax_tree/list'
 
   require 'mmx/notecard'
   require 'mmx/notecards'

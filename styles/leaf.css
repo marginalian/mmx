@@ -161,3 +161,38 @@ input[type="checkbox"]:checked + label::before {
 .leaf hr {
   border-top: 2px solid black;
 }
+
+not(li) > ol {
+  margin-top: 24px;
+}
+
+ol > li {
+  counter-increment: item;
+}
+
+ol > li:first-child {
+  counter-reset: item;
+}
+
+ol > li {
+  display: block;
+}
+
+ol > li:before {
+  content: counters(item, ".") ". ";
+  margin-left: -20px;
+  padding-right: 5px;
+  font-weight: bold;
+}
+
+ol li {
+  margin-top: 5px;
+}
+
+ol ol > li:before {
+  margin-left: -33px;
+}
+
+ol ol ol > li:before {
+  margin-left: -45px;
+}

@@ -40,11 +40,13 @@ module Mmx
           :comment
         when /^-+$/
           :heading
-        when /^-\s./
-          :list
+        when /^\s*-\s./
+          :ulist
+        when /^\s*#\s./
+          :olist
         when /^\s*\[.\]/
           :checkbox
-        when /^\s{2}\w/
+        when /^\s{2,}\w/
           :potential_list_item
         when /^\|{2}\s/
           :code
@@ -66,10 +68,14 @@ module Mmx
       end
 
       def potential_list_item(tree, prev, line)
-        return unless prev&.fetch(:type) == :list
-
-        text = line.gsub(/^\s/, "")
-        prev[:arr].last.concat(text)
+        prev_type = prev&.fetch(:type)
+        if [:ulist, :olist].include?(prev_type)
+          lvl = line.index(/\S/) - 2
+          text = line.gsub(/^\s*/, "")
+          List.(tree, prev, text, prev_type, lvl, true)
+        else
+          paragraph(tree, prev, line)
+        end
       end
 
       def paragraph(tree, prev, line)
@@ -100,6 +106,14 @@ module Mmx
         else
           tree.push({ type: :blockquote, arr: [text_without_prefix] })
         end
+      end
+
+      def ulist(tree, prev, line)
+        List.(tree, prev, line, :ulist)
+      end
+
+      def olist(tree, prev, line)
+        List.(tree, prev, line, :olist)
       end
 
       def remove_prefix_then_create(type, tree, prev, line)

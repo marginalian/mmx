@@ -44,6 +44,10 @@ module Mmx
 
         arr = arr.map(&method(guide[:process])) unless guide[:process].nil?
         inner = arr.map do |txt|
+          if txt.class == Hash
+            next wrap("", txt)
+          end
+
           id = guide[:id].nil? ? "" : guide[:id].(txt)
 
           "#{s(3)}<#{guide[:tag]} id='#{id}' #{guide[:props]}>#{txt}</#{guide[:tag]}>"
@@ -88,7 +92,8 @@ module Mmx
           heading: -> (lvl) do { tag: "h#{lvl}", id: -> (txt) { txt.downcase.gsub("\s", "&#95;") } } end,
           blockquote: { tag: 'p', wrap: 'blockquote' },
           break: { html: '<br />' },
-          list: { tag: 'li', wrap: 'ul' },
+          ulist: { tag: 'li', wrap: 'ul' },
+          olist: { tag: 'li', wrap: 'ol' },
           line: { html: '<hr>' },
           double_line: { html: '<hr class="double">' },
           comment: { html: '' },
