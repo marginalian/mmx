@@ -69,12 +69,15 @@ module Mmx
           .gsub(/_(.*?)_/, '<em>\1</em>')
       end
 
+      # this prevents the #format method from messing with
+      # code blocks and renders them verbatim
       def escape_html(string)
         string
           .gsub("&", "&amp;")
           .gsub("<", "&lt;")
           .gsub(">", "&gt;")
           .gsub("_", "&lowbar;")
+          .gsub("-", "&#45;")
       end
 
       def codify(match)
